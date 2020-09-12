@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom'
 
 function Cart() {
 
+    
     const cartitems = useStoreState(state => state.cart.cartIds);
 
     return (
