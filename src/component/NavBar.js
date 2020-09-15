@@ -28,6 +28,8 @@ const NavBar = () => {
             <NavLink className="d-inline p-2 text-white navlink" to="/HOME">Home</NavLink>
 
             <NavLink className="d-inline p-2 text-white navlink" to="/login">Login</NavLink>
+            <NavLink className="d-inline p-2 text-white navlink" to="/admin">Admin</NavLink>
+
             <NavLink className="d-inline p-2 btn_cart text-white navlink" to="/Cart"><AiOutlineShoppingCart className="fa_icon"></AiOutlineShoppingCart><Badge className="badge_cls">{count}</Badge></NavLink>
           </Nav>
         </Navbar.Collapse>

@@ -8,6 +8,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import NavBar from './component/NavBar';
 import CardDetailPage from './component/CardDetailPage';
 import { StoreProvider, createStore, action, computed, thunk } from 'easy-peasy';
+import AdminPage from './component/AdminPage';
 const productModel = {
   products: [],
   set: action((state, products) => {
@@ -41,6 +42,8 @@ function App() {
             <Route path='/Home' component={Home} />
             <Route path='/login' component={Login} />
             <Route path='/cart' component={Cart} />
+            <Route path='/admin' component={AdminPage} />
+
             <Route path='/carddetailpage' component={CardDetailPage} />
 
           </Switch>
