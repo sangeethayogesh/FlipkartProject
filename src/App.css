@@ -422,8 +422,7 @@ display: inline-block!important;
     font-weight: bold;
     text-transform: capitalize;
   }
-  
-  .error-msg
+.error-msg
   {
     color: red;
     width: 100%;

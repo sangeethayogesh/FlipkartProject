@@ -8,8 +8,7 @@ import { useStoreActions, useStoreState, action } from 'easy-peasy';
 
 function CardDetailPage(props) {
  
-
-  const addProductToCart = useStoreActions(actions => actions.cart.addCart);
+ const addProductToCart = useStoreActions(actions => actions.cart.addCart);
 
   const product = props.location.carddetailpage.product;
 console.log(product);
