@@ -16,6 +16,7 @@ function AdminPage() {
     })
   }
   return (
+    
 
     <div className="form_hole">
 
