@@ -7,11 +7,12 @@ import { useStoreActions, useStoreState, action } from 'easy-peasy';
 
 
 function CardDetailPage(props) {
+ 
 
   const addProductToCart = useStoreActions(actions => actions.cart.addCart);
 
   const product = props.location.carddetailpage.product;
-
+console.log(product);
   return (
     <div className="row card-image marg_top1">
       <div className="row">
@@ -34,7 +35,7 @@ function CardDetailPage(props) {
             <Card.Text className="cat_log-text3">{product.offerPercentage}% off</Card.Text>
             <Card.Text className="cat_log_par"><span className="text_head1"> NumberOfPurchase:</span> {product.numberOfPurchase}</Card.Text>
             <Card.Text className="cat_log_par"><span className="text_head1"> Available:</span> {product.available}</Card.Text>
-            <Card.Text className="cat_log_par"><span className="text_head"> Description:</span> {product.description}</Card.Text>
+            <Card.Text className="cat_log_par desc_par"><span className="text_head"> Description:</span> {product.description}</Card.Text>
 
             <Card.Text className="cat_log_par"><span className="text_head1"> company:</span><br />
               <span className="text_head1"> Name:</span> {product.company.name}</Card.Text>

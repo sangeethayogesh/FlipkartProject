@@ -1,26 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
-import * as yup from 'yup';
+
 import axios from 'axios'
-const schema = yup.object().shape({
-  picture: yup
-    .mixed()
-    .required("You need to provide a file")
-    .test("fileSize", "The file is too large", (value) => {
-      return value && value[0].size <= 2000000;
-    })
-    .test("type", "We only support jpeg", (value) => {
-      return value && value[0].type === "image/jpeg";
-    }),
-});
+
 
 function AdminPage() {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState('')
   const [post, setPost] = useState({})
-  
+ 
   const { register, errors, handleSubmit, Unregister } = useForm({
-    validationSchema: schema,
     mode: "onBlur",
     shouldUnregister: false,
   });
@@ -29,14 +18,11 @@ function AdminPage() {
     register: register2,
     errors: errors2,
     handleSubmit: handleSubmit2,
-
-  } = useForm({
+} = useForm({
     mode: "onBlur"
   });
-
-
-  const onSubmit = data => {
-
+  
+ const onSubmit = data => {
     console.log(data);
     axios.post('https://clanizon-ecommerce.getsandbox.com/products', data)
       .then(response => {
@@ -46,9 +32,9 @@ function AdminPage() {
         console.log(error)
       })
   }
-  const onSubmitEmail = data2 => {
 
-    console.log({ company: data2 });
+  const onSubmitEmail = data2 => {
+  console.log({ company: data2 });
     axios.post('https://clanizon-ecommerce.getsandbox.com/products', { company: data2 })
       .then(response => {
         console.log(response)
@@ -125,8 +111,8 @@ return (
           </div>
           <div className="label_form">
             <label>OfferPercentage:</label>
-            <input name="OfferPercentage" type="number" ref={register({ required: true, min: 1, max: 100 })} />
-            {errors.OfferPercentage && <span class="error-msg"> Must be  valid Percenatge required</span>}
+            <input name="offerPercentage" type="number" ref={register({ required: true, min: 1, max: 100 })} />
+            {errors.offerPercentage && <span class="error-msg"> Must be  valid Percenatge required</span>}
           </div>
 
           <div className="label_form_btn">
@@ -136,13 +122,9 @@ return (
       </div>
 
       <div className="formtwo">
-
-        <form key={2} onSubmit={handleSubmit2(onSubmitEmail)} className="form_handle">
-
-
-          <label className="comp-label">Comapany:</label>
-
-          <div className="label_form">
+<form key={2} onSubmit={handleSubmit2(onSubmitEmail)} className="form_handle">
+      <label className="comp-label">Comapany:</label>
+      <div className="label_form">
             <label>Name:</label>
             <input name="name" type="text" ref={register2({ required: true })} />
             {errors2.name && <span class="error-msg"> Must be  name required</span>}

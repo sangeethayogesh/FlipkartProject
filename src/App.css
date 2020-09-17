@@ -429,3 +429,21 @@ display: inline-block!important;
     font-size: 13px;
     text-align: center;
   }
+  .text_box
+  {
+    display: block;
+    box-sizing: border-box;
+    width: 65%;
+    border-radius: 4px;
+    border: 1px solid #7dbee2;
+    padding: 8px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    outline: none !important;
+  }
+  .text_box:focus{
+    border: 1px solid #0d8cd3 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    outline: none !important;
+  }
